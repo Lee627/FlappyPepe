@@ -17,4 +17,5 @@ Cloning from the github repo:
 
 Running Project in Xcode
 ------------------------
-
+* Simply open FlappyPepe/FlappyPepe/FlappyPepe.xcodeproj
+* CMD + R will run the application, or you can select Product > Run
