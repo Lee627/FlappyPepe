@@ -1,4 +1,4 @@
-# SwiftyBird
+# FlappyPepe
 This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework.
 
 How To Install
@@ -9,5 +9,5 @@ How To Install
 
 Cloning from the github repo:
 * Find a location on your machine where you would like to house the project
-* git clone https://github.com/Lee627/SwiftyBird.git
+* git clone https://github.com/Lee627/FlappyPepe.git
 
