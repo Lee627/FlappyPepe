@@ -4,7 +4,7 @@ This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKi
 How To Install
 --------------
 * You will need a Mac or a virtual machine of Mac OS X on your Windows machine
-* Install Xcode 7 (which is free)
+* Install Xcode 7
 * Set up Git
 
 Cloning from the github repo:
