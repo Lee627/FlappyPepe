@@ -1,4 +1,9 @@
 # FlappyPepe
+
+<p align="center">
+  <img src="/images/Pepe.png"/>
+</p>
+
 This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework.
 
 How To Install
