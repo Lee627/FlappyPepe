@@ -15,7 +15,7 @@ How to Install
 
 Cloning from the github repo:
 * Find a location on your machine where you would like to house the project
-* git clone https://github.com/Lee627/FlappyShibe.git
+* git clone https://github.com/ChapmanCPSC370/FlappyShibe.git
 
 Running Project in Xcode
 ------------------------
