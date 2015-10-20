@@ -19,3 +19,8 @@ Running Project in Xcode
 ------------------------
 * Simply open FlappyShibe/FlappyShibe/FlappyShibe.xcodeproj
 * CMD + R will run the application, or you can select Product > Run
+
+Mission Statement
+-----------------
+I am working on FlappyShibe project mainly for learning purposes and gaining experience in open source development. Also, I simply love memes.
+
