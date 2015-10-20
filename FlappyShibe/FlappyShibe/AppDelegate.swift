@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  FlappyPepe
+//  FlappyShibe
 //
-//  Created by Tae Hwan Lee on 10/19/15.
+//  Created by Tae Hwan Lee on 10/20/15.
 //  Copyright © 2015 ChapmanCPSC370. All rights reserved.
 //
 

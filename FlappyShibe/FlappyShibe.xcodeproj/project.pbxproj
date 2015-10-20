@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2EE63261BD4FAAB00993A4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE63251BD4FAAB00993A4F /* AppDelegate.swift */; };
-		A2EE63281BD4FAAB00993A4F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2EE63271BD4FAAB00993A4F /* GameScene.sks */; };
-		A2EE632A1BD4FAAB00993A4F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE63291BD4FAAB00993A4F /* GameScene.swift */; };
-		A2EE632C1BD4FAAB00993A4F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EE632B1BD4FAAB00993A4F /* GameViewController.swift */; };
-		A2EE632F1BD4FAAB00993A4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EE632D1BD4FAAB00993A4F /* Main.storyboard */; };
-		A2EE63311BD4FAAB00993A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2EE63301BD4FAAB00993A4F /* Assets.xcassets */; };
-		A2EE63341BD4FAAB00993A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EE63321BD4FAAB00993A4F /* LaunchScreen.storyboard */; };
+		A26ECD931BD6F791008A2639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD921BD6F791008A2639 /* AppDelegate.swift */; };
+		A26ECD951BD6F791008A2639 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD941BD6F791008A2639 /* GameScene.sks */; };
+		A26ECD971BD6F791008A2639 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD961BD6F791008A2639 /* GameScene.swift */; };
+		A26ECD991BD6F791008A2639 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD981BD6F791008A2639 /* GameViewController.swift */; };
+		A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9A1BD6F791008A2639 /* Main.storyboard */; };
+		A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9D1BD6F791008A2639 /* Assets.xcassets */; };
+		A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A2EE63221BD4FAAB00993A4F /* FlappyPepe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyPepe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2EE63251BD4FAAB00993A4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2EE63271BD4FAAB00993A4F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		A2EE63291BD4FAAB00993A4F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		A2EE632B1BD4FAAB00993A4F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		A2EE632E1BD4FAAB00993A4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A2EE63301BD4FAAB00993A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A2EE63331BD4FAAB00993A4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A2EE63351BD4FAAB00993A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A26ECD8F1BD6F791008A2639 /* FlappyShibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyShibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26ECD921BD6F791008A2639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A26ECD941BD6F791008A2639 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		A26ECD961BD6F791008A2639 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A26ECD981BD6F791008A2639 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A26ECD9B1BD6F791008A2639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A26ECD9D1BD6F791008A2639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A26ECDA01BD6F791008A2639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A26ECDA21BD6F791008A2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A2EE631F1BD4FAAB00993A4F /* Frameworks */ = {
+		A26ECD8C1BD6F791008A2639 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,72 +39,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2EE63191BD4FAAB00993A4F = {
+		A26ECD861BD6F791008A2639 = {
 			isa = PBXGroup;
 			children = (
-				A2EE63241BD4FAAB00993A4F /* FlappyPepe */,
-				A2EE63231BD4FAAB00993A4F /* Products */,
+				A26ECD911BD6F791008A2639 /* FlappyShibe */,
+				A26ECD901BD6F791008A2639 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A2EE63231BD4FAAB00993A4F /* Products */ = {
+		A26ECD901BD6F791008A2639 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2EE63221BD4FAAB00993A4F /* FlappyPepe.app */,
+				A26ECD8F1BD6F791008A2639 /* FlappyShibe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2EE63241BD4FAAB00993A4F /* FlappyPepe */ = {
+		A26ECD911BD6F791008A2639 /* FlappyShibe */ = {
 			isa = PBXGroup;
 			children = (
-				A2EE63251BD4FAAB00993A4F /* AppDelegate.swift */,
-				A2EE63271BD4FAAB00993A4F /* GameScene.sks */,
-				A2EE63291BD4FAAB00993A4F /* GameScene.swift */,
-				A2EE632B1BD4FAAB00993A4F /* GameViewController.swift */,
-				A2EE632D1BD4FAAB00993A4F /* Main.storyboard */,
-				A2EE63301BD4FAAB00993A4F /* Assets.xcassets */,
-				A2EE63321BD4FAAB00993A4F /* LaunchScreen.storyboard */,
-				A2EE63351BD4FAAB00993A4F /* Info.plist */,
+				A26ECD921BD6F791008A2639 /* AppDelegate.swift */,
+				A26ECD941BD6F791008A2639 /* GameScene.sks */,
+				A26ECD961BD6F791008A2639 /* GameScene.swift */,
+				A26ECD981BD6F791008A2639 /* GameViewController.swift */,
+				A26ECD9A1BD6F791008A2639 /* Main.storyboard */,
+				A26ECD9D1BD6F791008A2639 /* Assets.xcassets */,
+				A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */,
+				A26ECDA21BD6F791008A2639 /* Info.plist */,
 			);
-			path = FlappyPepe;
+			path = FlappyShibe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2EE63211BD4FAAB00993A4F /* FlappyPepe */ = {
+		A26ECD8E1BD6F791008A2639 /* FlappyShibe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2EE63381BD4FAAB00993A4F /* Build configuration list for PBXNativeTarget "FlappyPepe" */;
+			buildConfigurationList = A26ECDA51BD6F791008A2639 /* Build configuration list for PBXNativeTarget "FlappyShibe" */;
 			buildPhases = (
-				A2EE631E1BD4FAAB00993A4F /* Sources */,
-				A2EE631F1BD4FAAB00993A4F /* Frameworks */,
-				A2EE63201BD4FAAB00993A4F /* Resources */,
+				A26ECD8B1BD6F791008A2639 /* Sources */,
+				A26ECD8C1BD6F791008A2639 /* Frameworks */,
+				A26ECD8D1BD6F791008A2639 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FlappyPepe;
-			productName = FlappyPepe;
-			productReference = A2EE63221BD4FAAB00993A4F /* FlappyPepe.app */;
+			name = FlappyShibe;
+			productName = FlappyShibe;
+			productReference = A26ECD8F1BD6F791008A2639 /* FlappyShibe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A2EE631A1BD4FAAB00993A4F /* Project object */ = {
+		A26ECD871BD6F791008A2639 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ChapmanCPSC370;
 				TargetAttributes = {
-					A2EE63211BD4FAAB00993A4F = {
+					A26ECD8E1BD6F791008A2639 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
 			};
-			buildConfigurationList = A2EE631D1BD4FAAB00993A4F /* Build configuration list for PBXProject "FlappyPepe" */;
+			buildConfigurationList = A26ECD8A1BD6F791008A2639 /* Build configuration list for PBXProject "FlappyShibe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,56 +112,56 @@
 				en,
 				Base,
 			);
-			mainGroup = A2EE63191BD4FAAB00993A4F;
-			productRefGroup = A2EE63231BD4FAAB00993A4F /* Products */;
+			mainGroup = A26ECD861BD6F791008A2639;
+			productRefGroup = A26ECD901BD6F791008A2639 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2EE63211BD4FAAB00993A4F /* FlappyPepe */,
+				A26ECD8E1BD6F791008A2639 /* FlappyShibe */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A2EE63201BD4FAAB00993A4F /* Resources */ = {
+		A26ECD8D1BD6F791008A2639 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2EE63281BD4FAAB00993A4F /* GameScene.sks in Resources */,
-				A2EE63341BD4FAAB00993A4F /* LaunchScreen.storyboard in Resources */,
-				A2EE63311BD4FAAB00993A4F /* Assets.xcassets in Resources */,
-				A2EE632F1BD4FAAB00993A4F /* Main.storyboard in Resources */,
+				A26ECD951BD6F791008A2639 /* GameScene.sks in Resources */,
+				A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */,
+				A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */,
+				A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A2EE631E1BD4FAAB00993A4F /* Sources */ = {
+		A26ECD8B1BD6F791008A2639 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2EE632A1BD4FAAB00993A4F /* GameScene.swift in Sources */,
-				A2EE632C1BD4FAAB00993A4F /* GameViewController.swift in Sources */,
-				A2EE63261BD4FAAB00993A4F /* AppDelegate.swift in Sources */,
+				A26ECD971BD6F791008A2639 /* GameScene.swift in Sources */,
+				A26ECD991BD6F791008A2639 /* GameViewController.swift in Sources */,
+				A26ECD931BD6F791008A2639 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A2EE632D1BD4FAAB00993A4F /* Main.storyboard */ = {
+		A26ECD9A1BD6F791008A2639 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A2EE632E1BD4FAAB00993A4F /* Base */,
+				A26ECD9B1BD6F791008A2639 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A2EE63321BD4FAAB00993A4F /* LaunchScreen.storyboard */ = {
+		A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A2EE63331BD4FAAB00993A4F /* Base */,
+				A26ECDA01BD6F791008A2639 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A2EE63361BD4FAAB00993A4F /* Debug */ = {
+		A26ECDA31BD6F791008A2639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -213,7 +213,7 @@
 			};
 			name = Debug;
 		};
-		A2EE63371BD4FAAB00993A4F /* Release */ = {
+		A26ECDA41BD6F791008A2639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,24 +250,24 @@
 			};
 			name = Release;
 		};
-		A2EE63391BD4FAAB00993A4F /* Debug */ = {
+		A26ECDA61BD6F791008A2639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FlappyPepe/Info.plist;
+				INFOPLIST_FILE = FlappyShibe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyPepe;
+				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyShibe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		A2EE633A1BD4FAAB00993A4F /* Release */ = {
+		A26ECDA71BD6F791008A2639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FlappyPepe/Info.plist;
+				INFOPLIST_FILE = FlappyShibe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyPepe;
+				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyShibe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -275,24 +275,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2EE631D1BD4FAAB00993A4F /* Build configuration list for PBXProject "FlappyPepe" */ = {
+		A26ECD8A1BD6F791008A2639 /* Build configuration list for PBXProject "FlappyShibe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2EE63361BD4FAAB00993A4F /* Debug */,
-				A2EE63371BD4FAAB00993A4F /* Release */,
+				A26ECDA31BD6F791008A2639 /* Debug */,
+				A26ECDA41BD6F791008A2639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2EE63381BD4FAAB00993A4F /* Build configuration list for PBXNativeTarget "FlappyPepe" */ = {
+		A26ECDA51BD6F791008A2639 /* Build configuration list for PBXNativeTarget "FlappyShibe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2EE63391BD4FAAB00993A4F /* Debug */,
-				A2EE633A1BD4FAAB00993A4F /* Release */,
+				A26ECDA61BD6F791008A2639 /* Debug */,
+				A26ECDA71BD6F791008A2639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A2EE631A1BD4FAAB00993A4F /* Project object */;
+	rootObject = A26ECD871BD6F791008A2639 /* Project object */;
 }
