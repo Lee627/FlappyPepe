@@ -1,9 +1,9 @@
-# FlappyPepe
+# FlappyShibe
 <p align="center">
   <img src="/images/Pepe.png"/>
 </p>
 
-This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework. The only difference is that you take on the role of Pepe the frog.
+This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework. The only difference is that you take on the role of Doge.
 
 How to Install
 --------------
