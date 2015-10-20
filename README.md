@@ -1,6 +1,6 @@
 # FlappyShibe
 <p align="center">
-  <img src="/images/Pepe.png"/>
+  <img src="/images/Doge.png"/>
 </p>
 
 This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework. The only difference is that you take on the role of Doge.
@@ -13,9 +13,9 @@ How to Install
 
 Cloning from the github repo:
 * Find a location on your machine where you would like to house the project
-* git clone https://github.com/Lee627/FlappyPepe.git
+* git clone https://github.com/Lee627/FlappyShibe.git
 
 Running Project in Xcode
 ------------------------
-* Simply open FlappyPepe/FlappyPepe/FlappyPepe.xcodeproj
+* Simply open FlappyShibe/FlappyShibe/FlappyShibe.xcodeproj
 * CMD + R will run the application, or you can select Product > Run
