@@ -5,6 +5,8 @@
 
 This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKit framework. The only difference is that you take on the role of Doge.
 
+You tap on the screen to make Doge fly. Your goal is to help Doge fly as far as he can without hitting a pipe.
+
 How to Install
 --------------
 * You will need a Mac or a virtual machine of Mac OS X on your Windows machine
