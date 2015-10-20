@@ -26,3 +26,11 @@ Mission Statement
 -----------------
 I am working on FlappyShibe project mainly for learning purposes and gaining experience in open source development. Also, I simply love memes.
 
+Feel free to fork and use this template to make your own specialized Flappy Bird clone.
+
+Contributing
+------------
+
+
+Development Status
+------------------
