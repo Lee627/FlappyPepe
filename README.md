@@ -34,7 +34,7 @@ Contributions are more than welcome!
 
 1. Check the issue tracker for issues or wanted features
 2. Fork the project
-3. Create a branch specific to the issue or feature (fix/xxx or feature/xxx)
+3. Create a branch specific to the issue or feature with a naming convention like "fix/xxx" or "feature/xxx"
 4. Push to the branch
 5. Create a pull request
 
