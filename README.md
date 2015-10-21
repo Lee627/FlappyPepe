@@ -30,7 +30,14 @@ Feel free to fork and use this template to make your own unique Flappy Bird clon
 
 Contributing
 ------------
+Contributions are more than welcome!
 
+1. Check the issue tracker for issues or wanted features
+2. Fork the project
+3. Create a branch specific to the issue or feature (fix/xxx or feature/xxx)
+4. Push to the branch
+5. Create a pull request
 
 Development Status
 ------------------
+...
