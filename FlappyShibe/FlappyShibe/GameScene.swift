@@ -40,10 +40,22 @@ class GameScene: SKScene {
         let dogeTexture = SKTexture(imageNamed: "Block.png");
         doge = SKSpriteNode(texture: dogeTexture);
         
+        // Add physics simulation to a node
+        doge.physicsBody = SKPhysicsBody(circleOfRadius: dogeTexture.size().height / 2);
+        // Apply gravity and collisions with other objects
+        doge.physicsBody!.dynamic = true;
+            
         // Position is set to the middle of the screen
         doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
         self.addChild(doge);
         
+        // Ground physicsBody
+        var ground = SKNode();
+        ground.position = CGPointMake(0, 0);
+        ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1));
+        ground.physicsBody!.dynamic = false;
+        
+        self.addChild(ground);
         
     }
     
