@@ -10,13 +10,22 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    // Everything that appears on the screen is considered to be a node
+    var doge = SKSpriteNode();
     var background = SKSpriteNode();
     
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
         
-        // Created texture
+        // Create texture
+        let dogeTexture = SKTexture(imageNamed: "Block.png");
         let backgroundTexture = SKTexture(imageNamed: "Background.png");
+        
+        doge = SKSpriteNode(texture: dogeTexture);
+        
+        // Position is set to the middle of the screen
+        doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
+        
+        self.addChild(doge);
 
         let moveBackground = SKAction.moveByX(-backgroundTexture.size().width, y: 0, duration: 9);
         let replaceBackground = SKAction.moveByX(backgroundTexture.size().width, y: 0, duration: 0);
