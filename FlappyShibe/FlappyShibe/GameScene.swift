@@ -63,7 +63,9 @@ class GameScene: SKScene {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+       
+        doge.physicsBody!.velocity = CGVectorMake(0, 0);
+        doge.physicsBody!.applyImpulse(CGVectorMake(0, 50));
         
   
     }
