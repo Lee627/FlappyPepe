@@ -40,4 +40,5 @@ Contributions are more than welcome!
 
 Development Status
 ------------------
-...
+Last achieved goal: able to make the node fly
+Next goal: add doge sprite, randomly spawn pipes
