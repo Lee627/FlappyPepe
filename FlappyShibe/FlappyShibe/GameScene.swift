@@ -17,33 +17,38 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         
         // Create texture
-        let dogeTexture = SKTexture(imageNamed: "Block.png");
         let backgroundTexture = SKTexture(imageNamed: "Background.png");
-        
-        // Apply texture
-        doge = SKSpriteNode(texture: dogeTexture);
-        
-        // Position is set to the middle of the screen
-        doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
-        
-        self.addChild(doge);
 
-        let moveBackground = SKAction.moveByX(-backgroundTexture.size().width, y: 0, duration: 9);
+        // Scrolling background
+        let moveBackground = SKAction.moveByX(-backgroundTexture.size().width, y: 0, duration: 8);
         let replaceBackground = SKAction.moveByX(backgroundTexture.size().width, y: 0, duration: 0);
         let moveBackgroundForever = SKAction.repeatActionForever(SKAction.sequence([moveBackground, replaceBackground]));
         
-        for var i: CGFloat = 0; i < 3; i++ {
+        for var i: CGFloat = 0; i < 4; i++ {
             
-            // Applied Texture to that particular sprite node
+            // Apply texture to that particular sprite node
             background = SKSpriteNode(texture: backgroundTexture);
             background.position = CGPoint(x: backgroundTexture.size().width / 2 + backgroundTexture.size().width * i, y: CGRectGetMidY(self.frame));
+            
             // Set height equal to the height of the screen
             background.size.height = self.frame.height;
             background.runAction(moveBackgroundForever);
             self.addChild(background);
             
         }
+        
+        let dogeTexture = SKTexture(imageNamed: "Block.png");
+        doge = SKSpriteNode(texture: dogeTexture);
+        
+        // Position is set to the middle of the screen
+        doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
+        self.addChild(doge);
+        
+        
     }
+    
+
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
