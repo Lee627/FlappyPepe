@@ -20,6 +20,7 @@ class GameScene: SKScene {
         let dogeTexture = SKTexture(imageNamed: "Block.png");
         let backgroundTexture = SKTexture(imageNamed: "Background.png");
         
+        // Apply texture
         doge = SKSpriteNode(texture: dogeTexture);
         
         // Position is set to the middle of the screen
