@@ -58,19 +58,26 @@ class GameScene: SKScene {
         
         self.addChild(ground);
         
+        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true)
+
+        
     }
     
     func makePipes() {
         
-        let gapHeight = doge.size.height * 4
-        
+        let gapHeight = doge.size.height * 4;
         let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
-        
         let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
+        
+        let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100));
+        let removePipes = SKAction.removeFromParent();
+        let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
         
         var pipe1Texture = SKTexture(imageNamed: "pipe1.png");
         var pipe1 = SKSpriteNode(texture: pipe1Texture);
         pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
+        pipe1.runAction(moveAndRemovePipes);
+
         self.addChild(pipe1);
         
     }
