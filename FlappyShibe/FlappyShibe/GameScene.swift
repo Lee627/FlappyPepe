@@ -80,6 +80,15 @@ class GameScene: SKScene {
 
         self.addChild(pipe1);
         
+        
+        var pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
+        var pipe2 = SKSpriteNode(texture: pipe2Texture);
+        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
+        pipe2.runAction(moveAndRemovePipes);
+        
+        self.addChild(pipe2);
+        
+        
     }
 
     
