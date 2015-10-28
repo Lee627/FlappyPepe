@@ -32,6 +32,7 @@ class GameScene: SKScene {
             
             // Set height equal to the height of the screen
             background.size.height = self.frame.height;
+            background.zPosition = -5;
             background.runAction(moveBackgroundForever);
             self.addChild(background);
             
