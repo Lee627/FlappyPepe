@@ -13,6 +13,8 @@ class GameScene: SKScene {
     // Everything that appears on the screen is considered to be a node
     var doge = SKSpriteNode();
     var background = SKSpriteNode();
+    var pipe1 = SKSpriteNode();
+    var pipe2 = SKSpriteNode();
     
     override func didMoveToView(view: SKView) {
         
@@ -24,7 +26,7 @@ class GameScene: SKScene {
         let replaceBackground = SKAction.moveByX(backgroundTexture.size().width, y: 0, duration: 0);
         let moveBackgroundForever = SKAction.repeatActionForever(SKAction.sequence([moveBackground, replaceBackground]));
         
-        for var i: CGFloat = 0; i < 4; i++ {
+        for var i: CGFloat = 0; i < 3; i++ {
             
             // Apply texture to that particular sprite node
             background = SKSpriteNode(texture: backgroundTexture);
@@ -41,14 +43,17 @@ class GameScene: SKScene {
         let dogeTexture = SKTexture(imageNamed: "Block.png");
         doge = SKSpriteNode(texture: dogeTexture);
         
-        // Add physics simulation to a node
-        doge.physicsBody = SKPhysicsBody(circleOfRadius: dogeTexture.size().height / 2);
-        // Apply gravity and collisions with other objects
-        doge.physicsBody!.dynamic = true;
-            
         // Position is set to the middle of the screen
         doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
+        
+        // Add physics simulation to a node
+        doge.physicsBody = SKPhysicsBody(circleOfRadius: dogeTexture.size().height / 2);
+        
+        // Apply gravity and collisions with other objects
+        doge.physicsBody!.dynamic = true;
+        
         self.addChild(doge);
+        
         
         // Ground physicsBody
         var ground = SKNode();
@@ -60,11 +65,11 @@ class GameScene: SKScene {
         
         _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true)
 
-        
     }
     
     func makePipes() {
         
+        // Gap between the two pipes
         let gapHeight = doge.size.height * 4;
         let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
         let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
@@ -80,7 +85,6 @@ class GameScene: SKScene {
 
         self.addChild(pipe1);
         
-        
         var pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
         var pipe2 = SKSpriteNode(texture: pipe2Texture);
         pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
@@ -88,11 +92,8 @@ class GameScene: SKScene {
         
         self.addChild(pipe2);
         
-        
     }
 
-    
-    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        
         doge.physicsBody!.velocity = CGVectorMake(0, 0);
