@@ -40,6 +40,6 @@ Contributions are more than welcome!
 
 Development Status
 ------------------
-* Last achieved goal: randomly spawn pipes
-* In progress: collision detection
-* Next goal: scoring
+* Last achieved goal: collision detection and game ending
+* In progress: scoring
+* Next goal: start screen?
