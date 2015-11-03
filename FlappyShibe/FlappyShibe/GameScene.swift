@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    var gameOver = false;
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self;
@@ -130,16 +132,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact: SKPhysicsContact) {
         
         print("We have contact!");
-        
+        gameOver = true;
+        self.speed = 0;
     }
     
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       
-        doge.physicsBody!.velocity = CGVectorMake(0, 0);
-        doge.physicsBody!.applyImpulse(CGVectorMake(0, 50));
         
-  
+        if (gameOver == false) {
+            doge.physicsBody!.velocity = CGVectorMake(0, 0);
+            doge.physicsBody!.applyImpulse(CGVectorMake(0, 50));
+        }
+    
     }
    
     override func update(currentTime: CFTimeInterval) {
