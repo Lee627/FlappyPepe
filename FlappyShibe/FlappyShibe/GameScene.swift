@@ -63,6 +63,7 @@ class GameScene: SKScene {
         
         self.addChild(ground);
         
+        // Executed every 3 seconds
         _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true)
 
     }
@@ -71,9 +72,12 @@ class GameScene: SKScene {
         
         // Gap between the two pipes
         let gapHeight = doge.size.height * 4;
+        
+        // Random pipe gap locations
         let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
         let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
         
+        // Making pipes appear and disappear
         let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100));
         let removePipes = SKAction.removeFromParent();
         let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
