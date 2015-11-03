@@ -8,15 +8,23 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Everything that appears on the screen is considered to be a node
     var doge = SKSpriteNode();
     var background = SKSpriteNode();
     var pipe1 = SKSpriteNode();
     var pipe2 = SKSpriteNode();
+    enum ColliderType: UInt32 {
+        
+        case Doge = 1;
+        case Object = 2;
+        
+    }
     
     override func didMoveToView(view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self;
         
         // Create texture
         let backgroundTexture = SKTexture(imageNamed: "Background.png");
@@ -52,6 +60,11 @@ class GameScene: SKScene {
         // Apply gravity and collisions with other objects
         doge.physicsBody!.dynamic = true;
         
+        // Collision detection
+        doge.physicsBody!.categoryBitMask = ColliderType.Doge.rawValue;
+        doge.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        doge.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
         self.addChild(doge);
         
         
@@ -60,6 +73,10 @@ class GameScene: SKScene {
         ground.position = CGPointMake(0, 0);
         ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1));
         ground.physicsBody!.dynamic = false;
+        
+        ground.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        ground.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        ground.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
         
         self.addChild(ground);
         
@@ -86,6 +103,12 @@ class GameScene: SKScene {
         var pipe1 = SKSpriteNode(texture: pipe1Texture);
         pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
         pipe1.runAction(moveAndRemovePipes);
+        
+        pipe1.physicsBody = SKPhysicsBody(rectangleOfSize: pipe1Texture.size());
+        pipe1.physicsBody!.dynamic = false;
+        pipe1.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        pipe1.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        pipe1.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
 
         self.addChild(pipe1);
         
@@ -94,9 +117,22 @@ class GameScene: SKScene {
         pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
         pipe2.runAction(moveAndRemovePipes);
         
+        pipe2.physicsBody = SKPhysicsBody(rectangleOfSize: pipe2Texture.size());
+        pipe2.physicsBody!.dynamic = false;
+        pipe2.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        pipe2.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        pipe2.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
         self.addChild(pipe2);
         
     }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        print("We have contact!");
+        
+    }
+    
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        
