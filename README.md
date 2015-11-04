@@ -39,6 +39,10 @@ Contributions are more than welcome!
 4. Push to the branch
 5. Create a pull request
 
+Get Involved
+------------
+Check out [Gitter](https://gitter.im/ChapmanCPSC370/FlappyShibe) to communicate with other contributors and to find support.
+
 Development Status
 ------------------
 * Last achieved goal: collision detection and game ending
