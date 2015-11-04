@@ -1,4 +1,6 @@
 # FlappyShibe
+
+[![Join the chat at https://gitter.im/ChapmanCPSC370/FlappyShibe](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ChapmanCPSC370/FlappyShibe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <p align="center">
   <img src="/images/Doge.png"/>
 </p>
