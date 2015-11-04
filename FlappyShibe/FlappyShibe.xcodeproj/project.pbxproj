@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2371EE31BD8239F001D9060 /* Block.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EDF1BD8239F001D9060 /* Block.png */; settings = {ASSET_TAGS = (); }; };
-		A2371EE41BD8239F001D9060 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE01BD8239F001D9060 /* Background.png */; settings = {ASSET_TAGS = (); }; };
-		A2371EE51BD8239F001D9060 /* Pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE11BD8239F001D9060 /* Pipe1.png */; settings = {ASSET_TAGS = (); }; };
-		A2371EE61BD8239F001D9060 /* Pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE21BD8239F001D9060 /* Pipe2.png */; settings = {ASSET_TAGS = (); }; };
+		A2371EE31BD8239F001D9060 /* Block.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EDF1BD8239F001D9060 /* Block.png */; };
+		A2371EE41BD8239F001D9060 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE01BD8239F001D9060 /* Background.png */; };
+		A2371EE51BD8239F001D9060 /* Pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE11BD8239F001D9060 /* Pipe1.png */; };
+		A2371EE61BD8239F001D9060 /* Pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE21BD8239F001D9060 /* Pipe2.png */; };
 		A26ECD931BD6F791008A2639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD921BD6F791008A2639 /* AppDelegate.swift */; };
 		A26ECD951BD6F791008A2639 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD941BD6F791008A2639 /* GameScene.sks */; };
 		A26ECD971BD6F791008A2639 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD961BD6F791008A2639 /* GameScene.swift */; };
@@ -18,6 +18,8 @@
 		A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9A1BD6F791008A2639 /* Main.storyboard */; };
 		A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9D1BD6F791008A2639 /* Assets.xcassets */; };
 		A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */; };
+		A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA831BE9EB7C00EF0587 /* Doge1.png */; };
+		A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA841BE9EB7C00EF0587 /* Doge2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A26ECD9D1BD6F791008A2639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A26ECDA01BD6F791008A2639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26ECDA21BD6F791008A2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A278CA831BE9EB7C00EF0587 /* Doge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge1.png; sourceTree = "<group>"; };
+		A278CA841BE9EB7C00EF0587 /* Doge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				A26ECD961BD6F791008A2639 /* GameScene.swift */,
 				A26ECD981BD6F791008A2639 /* GameViewController.swift */,
 				A26ECD9A1BD6F791008A2639 /* Main.storyboard */,
+				A278CA831BE9EB7C00EF0587 /* Doge1.png */,
+				A278CA841BE9EB7C00EF0587 /* Doge2.png */,
 				A2371EDF1BD8239F001D9060 /* Block.png */,
 				A2371EE01BD8239F001D9060 /* Background.png */,
 				A2371EE11BD8239F001D9060 /* Pipe1.png */,
@@ -144,9 +150,11 @@
 				A2371EE41BD8239F001D9060 /* Background.png in Resources */,
 				A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */,
 				A2371EE61BD8239F001D9060 /* Pipe2.png in Resources */,
+				A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */,
 				A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */,
 				A2371EE51BD8239F001D9060 /* Pipe1.png in Resources */,
 				A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */,
+				A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
