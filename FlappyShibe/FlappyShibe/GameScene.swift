@@ -148,7 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (gameOver == false) {
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
-            doge.physicsBody!.applyImpulse(CGVectorMake(0, 50));
+            doge.physicsBody!.applyImpulse(CGVectorMake(0, 45));
         }
     
     }
