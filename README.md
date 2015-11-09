@@ -45,6 +45,6 @@ Check out [Gitter](https://gitter.im/ChapmanCPSC370/FlappyShibe) to communicate 
 
 Development Status
 ------------------
-* Last achieved goal: collision detection and game ending
+* Last achieved goal: Doge animation
 * In progress: scoring
 * Next goal: start screen?
