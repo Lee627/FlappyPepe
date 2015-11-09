@@ -50,14 +50,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        let dogeTexture = SKTexture(imageNamed: "Block.png");
-        doge = SKSpriteNode(texture: dogeTexture);
+        let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
+        let dogeTexture2 = SKTexture(imageNamed: "Doge2.png");
+        
+        // Animating Sprites
+        let animation = SKAction.animateWithTextures([dogeTexture1, dogeTexture2], timePerFrame: 0.1);
+        let dogeRepeatAnimation = SKAction.repeatActionForever(animation);
+        
+        doge = SKSpriteNode(texture: dogeTexture1);
         
         // Position is set to the middle of the screen
         doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
+        doge.runAction(dogeRepeatAnimation);
         
         // Add physics simulation to a node
-        doge.physicsBody = SKPhysicsBody(circleOfRadius: dogeTexture.size().height / 2);
+        doge.physicsBody = SKPhysicsBody(circleOfRadius: dogeTexture1.size().height / 2);
         
         // Apply gravity and collisions with other objects
         doge.physicsBody!.dynamic = true;
