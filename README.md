@@ -48,3 +48,7 @@ Development Status
 * Last achieved goal: scoring
 * In progress: game over control/restart option
 * Next goal: start screen?
+
+License
+-------
+[MIT License](http://opensource.org/licenses/MIT)
