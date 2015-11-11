@@ -10,7 +10,10 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var score = 0;
+    
     // Everything that appears on the screen is considered to be a node
+    var scoreLabel = SKLabelNode();
     var doge = SKSpriteNode();
     var background = SKSpriteNode();
     var pipe1 = SKSpriteNode();
@@ -19,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         case Doge = 1;
         case Object = 2;
+        case Gap = 4;
         
     }
     
@@ -49,6 +53,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(background);
             
         }
+        
+        // Display score
+        scoreLabel.fontName = "Helvetica";
+        scoreLabel.fontSize = 60;
+        scoreLabel.text = "0";
+        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 70);
+        self.addChild(scoreLabel);
         
         let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
         let dogeTexture2 = SKTexture(imageNamed: "Doge2.png");
@@ -90,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(ground);
         
         // Executed every 3 seconds
-        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true);
 
     }
     
@@ -134,13 +145,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(pipe2);
         
+        // PhysicsBody for the gap between the two pipes -- used for scoring
+        let gap = SKNode()
+        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipeOffset);
+        gap.runAction(moveAndRemovePipes);
+        gap.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(pipe1.size.width, gapHeight));
+        gap.physicsBody!.dynamic = false;
+        
+        gap.physicsBody!.categoryBitMask = ColliderType.Gap.rawValue;
+        gap.physicsBody!.contactTestBitMask = ColliderType.Doge.rawValue;
+        gap.physicsBody!.collisionBitMask = ColliderType.Gap.rawValue;
+        
+        self.addChild(gap);
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        
-        print("We have contact!");
-        gameOver = true;
-        self.speed = 0;
+        // Check for the category types of the objects that are colliding
+        if contact.bodyA.categoryBitMask == ColliderType.Gap.rawValue || contact.bodyB.categoryBitMask == ColliderType.Gap.rawValue {
+            
+            score++;
+            
+            scoreLabel.text = String(score);
+            
+        } else {
+            
+            if gameOver == false {
+                
+                gameOver = true;
+                
+                self.speed = 0;
+            }
+        }
     }
     
 
