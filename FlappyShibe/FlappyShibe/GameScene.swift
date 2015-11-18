@@ -14,10 +14,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Everything that appears on the screen is considered to be a node
     var scoreLabel = SKLabelNode();
+    var gameoverLabel = SKLabelNode();
     var doge = SKSpriteNode();
     var background = SKSpriteNode();
     var pipe1 = SKSpriteNode();
     var pipe2 = SKSpriteNode();
+    var movingObjects = SKSpriteNode();
+    var labelContainer = SKSpriteNode();
     enum ColliderType: UInt32 {
         
         case Doge = 1;
@@ -28,13 +31,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameOver = false;
     
-    override func didMoveToView(view: SKView) {
-        
-        self.physicsWorld.contactDelegate = self;
-        
+    func makeBG() {
         // Create texture
         let backgroundTexture = SKTexture(imageNamed: "Background.png");
-
+        
         // Scrolling background
         let moveBackground = SKAction.moveByX(-backgroundTexture.size().width, y: 0, duration: 8);
         let replaceBackground = SKAction.moveByX(backgroundTexture.size().width, y: 0, duration: 0);
@@ -50,9 +50,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.size.height = self.frame.height;
             background.zPosition = -5;
             background.runAction(moveBackgroundForever);
-            self.addChild(background);
+            movingObjects.addChild(background);
             
         }
+    }
+    
+    override func didMoveToView(view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self;
+        
+        self.addChild(movingObjects);
+        self.addChild(labelContainer);
+        
+        makeBG();
         
         // Display score
         scoreLabel.fontName = "Helvetica";
@@ -79,11 +89,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Apply gravity and collisions with other objects
         doge.physicsBody!.dynamic = true;
+        //doge.physicsBody?.allowsRotation = false;
         
         // Collision detection
         doge.physicsBody!.categoryBitMask = ColliderType.Doge.rawValue;
         doge.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
         doge.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
+        doge.physicsBody!.allowsRotation = false;
         
         self.addChild(doge);
         
@@ -130,7 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pipe1.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
         pipe1.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
 
-        self.addChild(pipe1);
+        movingObjects.addChild(pipe1);
         
         var pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
         var pipe2 = SKSpriteNode(texture: pipe2Texture);
@@ -143,7 +156,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pipe2.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
         pipe2.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
         
-        self.addChild(pipe2);
+        movingObjects.addChild(pipe2);
         
         // PhysicsBody for the gap between the two pipes -- used for scoring
         let gap = SKNode()
@@ -156,7 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gap.physicsBody!.contactTestBitMask = ColliderType.Doge.rawValue;
         gap.physicsBody!.collisionBitMask = ColliderType.Gap.rawValue;
         
-        self.addChild(gap);
+        movingObjects.addChild(gap);
         
     }
     
@@ -175,6 +188,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 gameOver = true;
                 
                 self.speed = 0;
+                gameoverLabel.fontName = "Helvetica";
+                gameoverLabel.fontSize = 30;
+                gameoverLabel.text = "Game Over! Tap to play again";
+                gameoverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+                labelContainer.addChild(gameoverLabel);
             }
         }
     }
@@ -185,6 +203,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (gameOver == false) {
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
             doge.physicsBody!.applyImpulse(CGVectorMake(0, 45));
+        } else {
+            score = 0;
+            scoreLabel.text = "0";
+            doge.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+            doge.physicsBody!.velocity = CGVectorMake(0, 0);
+            movingObjects.removeAllChildren();
+            makeBG();
+            self.speed = 1;
+            gameOver = false;
+            labelContainer.removeAllChildren();
+            
         }
     
     }
