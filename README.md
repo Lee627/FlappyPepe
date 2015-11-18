@@ -45,9 +45,9 @@ Check out [Gitter](https://gitter.im/ChapmanCPSC370/FlappyShibe) to communicate 
 
 Development Status
 ------------------
-* Last achieved goal: scoring
-* In progress: game over control/restart option
-* Next goal: start screen?
+* Last achieved goal: game over control/restart option
+* In progress: start screen
+* Next goal: game over menu
 
 License
 -------
