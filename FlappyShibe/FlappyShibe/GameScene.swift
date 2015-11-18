@@ -68,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontName = "Helvetica";
         scoreLabel.fontSize = 60;
         scoreLabel.text = "0";
-        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 70);
+        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 143);
         self.addChild(scoreLabel);
         
         let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
