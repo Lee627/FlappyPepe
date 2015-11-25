@@ -102,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // Ground physicsBody
-        var ground = SKNode();
+        let ground = SKNode();
         ground.position = CGPointMake(0, 0);
         ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1));
         ground.physicsBody!.dynamic = false;
@@ -132,8 +132,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let removePipes = SKAction.removeFromParent();
         let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
         
-        var pipe1Texture = SKTexture(imageNamed: "pipe1.png");
-        var pipe1 = SKSpriteNode(texture: pipe1Texture);
+        let pipe1Texture = SKTexture(imageNamed: "pipe1.png");
+        let pipe1 = SKSpriteNode(texture: pipe1Texture);
         pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
         pipe1.runAction(moveAndRemovePipes);
         
@@ -145,8 +145,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         movingObjects.addChild(pipe1);
         
-        var pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
-        var pipe2 = SKSpriteNode(texture: pipe2Texture);
+        let pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
+        let pipe2 = SKSpriteNode(texture: pipe2Texture);
         pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
         pipe2.runAction(moveAndRemovePipes);
         
