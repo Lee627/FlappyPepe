@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    
+    var userStarted = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,19 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+            skView.paused = true
+            
+            if userStarted {
+                skView.paused = false
+            }
+            
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        if userStarted == false {
+            userStarted = true
+            viewDidLoad()
         }
     }
 
