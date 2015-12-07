@@ -11,6 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    //Variable to store if the user touched the screen yet to start the game
     var userStarted = false
 
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
             skView.paused = true
             
+            //if the user touched the screen to start the game
             if userStarted {
                 skView.paused = false
             }
@@ -38,11 +40,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    //if the user touches the screen anywhere
     override func touchesBegan(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        
         if userStarted == false {
             userStarted = true
             viewDidLoad()
         }
+        
     }
 
     override func shouldAutorotate() -> Bool {
