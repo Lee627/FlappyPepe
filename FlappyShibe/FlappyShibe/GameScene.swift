@@ -150,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         doge = SKSpriteNode(texture: dogeTexture1);
         
         // Position is set to the middle of the screen
-        doge.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame));
+        doge.position = CGPoint(x: CGRectGetMidX(self.frame) - 100, y: CGRectGetMidY(self.frame) + 200);
         doge.runAction(dogeRepeatAnimation);
         
         // Add physics simulation to a node
@@ -158,7 +158,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Apply gravity and collisions with other objects
         doge.physicsBody!.dynamic = true;
-        //doge.physicsBody?.allowsRotation = false;
         
         // Collision detection
         doge.physicsBody!.categoryBitMask = ColliderType.Doge.rawValue;
@@ -171,10 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Executed every 3 seconds
         _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("createPipes"), userInfo: nil, repeats: true);
-
     }
-    
-
     
     func didBeginContact(contact: SKPhysicsContact) {
         // Check for the category types of the objects that are colliding
@@ -200,7 +196,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if (gameOver == false) {
@@ -209,16 +204,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             score = 0;
             scoreLabel.text = "0";
-            doge.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+            doge.position = CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame) + 200);
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
             movingObjects.removeAllChildren();
             createGround();
             self.speed = 1;
             gameOver = false;
             labelContainer.removeAllChildren();
-            
         }
-    
     }
    
     override func update(currentTime: CFTimeInterval) {
