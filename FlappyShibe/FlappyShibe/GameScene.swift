@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(groundPhysics);
     }
-    
+
     func createPipes() {
         
         // Gap between the two pipes
@@ -74,16 +74,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Random pipe gap locations
         let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
-        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
+        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 8;
         
         // Making pipes appear and disappear
-        let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100));
+        let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 50));
         let removePipes = SKAction.removeFromParent();
         let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
         
-        let pipe1Texture = SKTexture(imageNamed: "pipe1.png");
+        let pipe1Texture = SKTexture(imageNamed: "PipeDown.png");
         let pipe1 = SKSpriteNode(texture: pipe1Texture);
-        pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
+        pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width/2, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
+        pipe1.zPosition = -10;
         pipe1.runAction(moveAndRemovePipes);
         
         pipe1.physicsBody = SKPhysicsBody(rectangleOfSize: pipe1Texture.size());
@@ -94,9 +95,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         movingObjects.addChild(pipe1);
         
-        let pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
+        let pipe2Texture = SKTexture(imageNamed: "PipeUp.png");
         let pipe2 = SKSpriteNode(texture: pipe2Texture);
-        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
+        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width/2, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
+        pipe2.zPosition = -10;
         pipe2.runAction(moveAndRemovePipes);
         
         pipe2.physicsBody = SKPhysicsBody(rectangleOfSize: pipe2Texture.size());
@@ -109,7 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // PhysicsBody for the gap between the two pipes -- used for scoring
         let gap = SKNode()
-        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipeOffset);
+        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width/2, y: CGRectGetMidY(self.frame) + pipeOffset);
         gap.runAction(moveAndRemovePipes);
         gap.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(pipe1.size.width, gapHeight));
         gap.physicsBody!.dynamic = false;
