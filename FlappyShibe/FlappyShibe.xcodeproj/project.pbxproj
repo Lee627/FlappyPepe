@@ -75,17 +75,25 @@
 				A26ECD961BD6F791008A2639 /* GameScene.swift */,
 				A26ECD981BD6F791008A2639 /* GameViewController.swift */,
 				A26ECD9A1BD6F791008A2639 /* Main.storyboard */,
+				A2DDE2E31C17CABD0084957F /* Images */,
+				A26ECD9D1BD6F791008A2639 /* Assets.xcassets */,
+				A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */,
+				A26ECDA21BD6F791008A2639 /* Info.plist */,
+			);
+			path = FlappyShibe;
+			sourceTree = "<group>";
+		};
+		A2DDE2E31C17CABD0084957F /* Images */ = {
+			isa = PBXGroup;
+			children = (
 				A278CA831BE9EB7C00EF0587 /* Doge1.png */,
 				A278CA841BE9EB7C00EF0587 /* Doge2.png */,
 				A2371EDF1BD8239F001D9060 /* Block.png */,
 				A2371EE01BD8239F001D9060 /* Background.png */,
 				A2371EE11BD8239F001D9060 /* Pipe1.png */,
 				A2371EE21BD8239F001D9060 /* Pipe2.png */,
-				A26ECD9D1BD6F791008A2639 /* Assets.xcassets */,
-				A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */,
-				A26ECDA21BD6F791008A2639 /* Info.plist */,
 			);
-			path = FlappyShibe;
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
