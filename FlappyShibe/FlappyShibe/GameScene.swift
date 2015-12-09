@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameoverLabel = SKLabelNode();
     var doge = SKSpriteNode();
     var background = SKSpriteNode();
+    var ground = SKSpriteNode();
     var pipe1 = SKSpriteNode();
     var pipe2 = SKSpriteNode();
     var movingObjects = SKSpriteNode();
@@ -31,28 +32,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameOver = false;
     
-    func makeBG() {
-        // Create texture
-        let backgroundTexture = SKTexture(imageNamed: "Background.png");
+    func createGround() {
         
-        // Scrolling background
-        let moveBackground = SKAction.moveByX(-backgroundTexture.size().width, y: 0, duration: 8);
-        let replaceBackground = SKAction.moveByX(backgroundTexture.size().width, y: 0, duration: 0);
-        let moveBackgroundForever = SKAction.repeatActionForever(SKAction.sequence([moveBackground, replaceBackground]));
+        let backgroundTexture = SKTexture(imageNamed: "download2.png");
+        background = SKSpriteNode(texture: backgroundTexture);
+        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 1.9);
+        background.zPosition = -20;
+        movingObjects.addChild(background);
         
-        for var i: CGFloat = 0; i < 3; i++ {
-            
-            // Apply texture to that particular sprite node
-            background = SKSpriteNode(texture: backgroundTexture);
-            background.position = CGPoint(x: backgroundTexture.size().width / 2 + backgroundTexture.size().width * i, y: CGRectGetMidY(self.frame));
-            
-            // Set height equal to the height of the screen
-            background.size.height = self.frame.height;
-            background.zPosition = -5;
-            background.runAction(moveBackgroundForever);
-            movingObjects.addChild(background);
-            
+        // Scrolling ground
+        let groundTexture = SKTexture(imageNamed: "download.png");
+        let moveLeft = SKAction.moveByX(-groundTexture.size().width, y: 0, duration: 6)
+        let moveReset = SKAction.moveByX(groundTexture.size().width, y: 0, duration: 0)
+        let moveGroundForever = SKAction.repeatActionForever(SKAction.sequence([moveLeft, moveReset]));
+        
+        for (var i: CGFloat = 0; i < 3; ++i) {
+            ground = SKSpriteNode(texture: groundTexture);
+            ground.position = CGPoint(x: groundTexture.size().width/2 + groundTexture.size().width * i, y: 57);
+            ground.zPosition = 20;
+            ground.runAction(moveGroundForever);
+            movingObjects.addChild(ground);
         }
+        
+        // Ground physicsBody
+        let groundPhysics = SKNode();
+        groundPhysics.position = CGPointMake(0, 112);
+        groundPhysics.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1));
+        groundPhysics.physicsBody!.dynamic = false;
+        
+        groundPhysics.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        groundPhysics.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        groundPhysics.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
+        self.addChild(groundPhysics);
     }
     
     override func didMoveToView(view: SKView) {
@@ -62,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(movingObjects);
         self.addChild(labelContainer);
         
-        makeBG();
+        createGround();
         
         // Display score
         scoreLabel.fontName = "Helvetica";
@@ -100,19 +112,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         doge.physicsBody!.allowsRotation = false;
         
         self.addChild(doge);
-        
-        
-        // Ground physicsBody
-        let ground = SKNode();
-        ground.position = CGPointMake(0, 0);
-        ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.size.width, 1));
-        ground.physicsBody!.dynamic = false;
-        
-        ground.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
-        ground.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
-        ground.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
-        
-        self.addChild(ground);
         
         // Executed every 3 seconds
         _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true);
@@ -210,7 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             doge.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
             movingObjects.removeAllChildren();
-            makeBG();
+            createGround();
             self.speed = 1;
             gameOver = false;
             labelContainer.removeAllChildren();
