@@ -123,14 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         movingObjects.addChild(gap);
     }
     
-    override func didMoveToView(view: SKView) {
-        
-        self.physicsWorld.contactDelegate = self;
-        
-        self.addChild(movingObjects);
-        self.addChild(labelContainer);
-        
-        createGround();
+    func createScoreLabel() {
         
         // Display score
         scoreLabel.fontName = "Helvetica";
@@ -139,7 +132,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 143);
         scoreLabel.zPosition = 100;
         self.addChild(scoreLabel);
+    }
+    
+    override func didMoveToView(view: SKView) {
         
+        self.physicsWorld.contactDelegate = self;
+        
+        self.addChild(movingObjects);
+        self.addChild(labelContainer);
+        
+        createGround();
+        createScoreLabel();
+
         let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
         let dogeTexture2 = SKTexture(imageNamed: "Doge2.png");
         
