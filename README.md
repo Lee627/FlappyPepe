@@ -11,7 +11,7 @@ You tap on the screen to make Doge fly. Your goal is to help Doge fly as far as 
 Screenshot
 ----------
 
-![ScreenShot](https://github.com/ChapmanCPSC370/FlappyShibe/blob/master/images/SS1.png)
+![ScreenShot](https://github.com/ChapmanCPSC370/FlappyShibe/blob/master/images/SS2.png)
 
 How to Install
 --------------
