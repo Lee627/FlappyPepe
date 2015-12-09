@@ -67,6 +67,60 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(groundPhysics);
     }
     
+    func createPipes() {
+        
+        // Gap between the two pipes
+        let gapHeight = doge.size.height * 4;
+        
+        // Random pipe gap locations
+        let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
+        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
+        
+        // Making pipes appear and disappear
+        let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100));
+        let removePipes = SKAction.removeFromParent();
+        let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
+        
+        let pipe1Texture = SKTexture(imageNamed: "pipe1.png");
+        let pipe1 = SKSpriteNode(texture: pipe1Texture);
+        pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
+        pipe1.runAction(moveAndRemovePipes);
+        
+        pipe1.physicsBody = SKPhysicsBody(rectangleOfSize: pipe1Texture.size());
+        pipe1.physicsBody!.dynamic = false;
+        pipe1.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        pipe1.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        pipe1.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
+        movingObjects.addChild(pipe1);
+        
+        let pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
+        let pipe2 = SKSpriteNode(texture: pipe2Texture);
+        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
+        pipe2.runAction(moveAndRemovePipes);
+        
+        pipe2.physicsBody = SKPhysicsBody(rectangleOfSize: pipe2Texture.size());
+        pipe2.physicsBody!.dynamic = false;
+        pipe2.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
+        pipe2.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
+        pipe2.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
+        
+        movingObjects.addChild(pipe2);
+        
+        // PhysicsBody for the gap between the two pipes -- used for scoring
+        let gap = SKNode()
+        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipeOffset);
+        gap.runAction(moveAndRemovePipes);
+        gap.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(pipe1.size.width, gapHeight));
+        gap.physicsBody!.dynamic = false;
+        
+        gap.physicsBody!.categoryBitMask = ColliderType.Gap.rawValue;
+        gap.physicsBody!.contactTestBitMask = ColliderType.Doge.rawValue;
+        gap.physicsBody!.collisionBitMask = ColliderType.Gap.rawValue;
+        
+        movingObjects.addChild(gap);
+    }
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self;
@@ -114,64 +168,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(doge);
         
         // Executed every 3 seconds
-        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("makePipes"), userInfo: nil, repeats: true);
+        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("createPipes"), userInfo: nil, repeats: true);
 
     }
     
-    func makePipes() {
-        
-        // Gap between the two pipes
-        let gapHeight = doge.size.height * 4;
-        
-        // Random pipe gap locations
-        let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
-        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4;
-        
-        // Making pipes appear and disappear
-        let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 100));
-        let removePipes = SKAction.removeFromParent();
-        let moveAndRemovePipes = SKAction.sequence([movePipes, removePipes]);
-        
-        let pipe1Texture = SKTexture(imageNamed: "pipe1.png");
-        let pipe1 = SKSpriteNode(texture: pipe1Texture);
-        pipe1.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipe1Texture.size().height/2 + gapHeight / 2 + pipeOffset);
-        pipe1.runAction(moveAndRemovePipes);
-        
-        pipe1.physicsBody = SKPhysicsBody(rectangleOfSize: pipe1Texture.size());
-        pipe1.physicsBody!.dynamic = false;
-        pipe1.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
-        pipe1.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
-        pipe1.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
 
-        movingObjects.addChild(pipe1);
-        
-        let pipe2Texture = SKTexture(imageNamed: "Pipe2.png");
-        let pipe2 = SKSpriteNode(texture: pipe2Texture);
-        pipe2.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) - pipe2Texture.size().height/2 - gapHeight / 2 + pipeOffset);
-        pipe2.runAction(moveAndRemovePipes);
-        
-        pipe2.physicsBody = SKPhysicsBody(rectangleOfSize: pipe2Texture.size());
-        pipe2.physicsBody!.dynamic = false;
-        pipe2.physicsBody!.categoryBitMask = ColliderType.Object.rawValue;
-        pipe2.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
-        pipe2.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
-        
-        movingObjects.addChild(pipe2);
-        
-        // PhysicsBody for the gap between the two pipes -- used for scoring
-        let gap = SKNode()
-        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width, y: CGRectGetMidY(self.frame) + pipeOffset);
-        gap.runAction(moveAndRemovePipes);
-        gap.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(pipe1.size.width, gapHeight));
-        gap.physicsBody!.dynamic = false;
-        
-        gap.physicsBody!.categoryBitMask = ColliderType.Gap.rawValue;
-        gap.physicsBody!.contactTestBitMask = ColliderType.Doge.rawValue;
-        gap.physicsBody!.collisionBitMask = ColliderType.Gap.rawValue;
-        
-        movingObjects.addChild(gap);
-        
-    }
     
     func didBeginContact(contact: SKPhysicsContact) {
         // Check for the category types of the objects that are colliding
