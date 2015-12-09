@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A2371EE31BD8239F001D9060 /* Block.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EDF1BD8239F001D9060 /* Block.png */; };
-		A2371EE41BD8239F001D9060 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE01BD8239F001D9060 /* Background.png */; };
 		A2371EE51BD8239F001D9060 /* Pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE11BD8239F001D9060 /* Pipe1.png */; };
 		A2371EE61BD8239F001D9060 /* Pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = A2371EE21BD8239F001D9060 /* Pipe2.png */; };
 		A26ECD931BD6F791008A2639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ECD921BD6F791008A2639 /* AppDelegate.swift */; };
@@ -20,11 +19,12 @@
 		A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */; };
 		A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA831BE9EB7C00EF0587 /* Doge1.png */; };
 		A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA841BE9EB7C00EF0587 /* Doge2.png */; };
+		A2DDE2E61C1807620084957F /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E41C1807620084957F /* Ground.png */; };
+		A2DDE2E71C1807620084957F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E51C1807620084957F /* Background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A2371EDF1BD8239F001D9060 /* Block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Block.png; sourceTree = "<group>"; };
-		A2371EE01BD8239F001D9060 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		A2371EE11BD8239F001D9060 /* Pipe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe1.png; sourceTree = "<group>"; };
 		A2371EE21BD8239F001D9060 /* Pipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe2.png; sourceTree = "<group>"; };
 		A26ECD8F1BD6F791008A2639 /* FlappyShibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyShibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +38,8 @@
 		A26ECDA21BD6F791008A2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A278CA831BE9EB7C00EF0587 /* Doge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge1.png; sourceTree = "<group>"; };
 		A278CA841BE9EB7C00EF0587 /* Doge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge2.png; sourceTree = "<group>"; };
+		A2DDE2E41C1807620084957F /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		A2DDE2E51C1807620084957F /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +88,11 @@
 		A2DDE2E31C17CABD0084957F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A2DDE2E41C1807620084957F /* Ground.png */,
+				A2DDE2E51C1807620084957F /* Background.png */,
 				A278CA831BE9EB7C00EF0587 /* Doge1.png */,
 				A278CA841BE9EB7C00EF0587 /* Doge2.png */,
 				A2371EDF1BD8239F001D9060 /* Block.png */,
-				A2371EE01BD8239F001D9060 /* Background.png */,
 				A2371EE11BD8239F001D9060 /* Pipe1.png */,
 				A2371EE21BD8239F001D9060 /* Pipe2.png */,
 			);
@@ -155,7 +158,8 @@
 			files = (
 				A26ECD951BD6F791008A2639 /* GameScene.sks in Resources */,
 				A2371EE31BD8239F001D9060 /* Block.png in Resources */,
-				A2371EE41BD8239F001D9060 /* Background.png in Resources */,
+				A2DDE2E71C1807620084957F /* Background.png in Resources */,
+				A2DDE2E61C1807620084957F /* Ground.png in Resources */,
 				A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */,
 				A2371EE61BD8239F001D9060 /* Pipe2.png in Resources */,
 				A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */,
