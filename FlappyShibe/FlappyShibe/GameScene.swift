@@ -34,14 +34,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func createGround() {
         
-        let backgroundTexture = SKTexture(imageNamed: "download2.png");
+        let backgroundTexture = SKTexture(imageNamed: "Background.png");
         background = SKSpriteNode(texture: backgroundTexture);
         background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 1.9);
         background.zPosition = -20;
         movingObjects.addChild(background);
         
         // Scrolling ground
-        let groundTexture = SKTexture(imageNamed: "download.png");
+        let groundTexture = SKTexture(imageNamed: "Ground.png");
         let moveLeft = SKAction.moveByX(-groundTexture.size().width, y: 0, duration: 6)
         let moveReset = SKAction.moveByX(groundTexture.size().width, y: 0, duration: 0)
         let moveGroundForever = SKAction.repeatActionForever(SKAction.sequence([moveLeft, moveReset]));
