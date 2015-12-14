@@ -42,13 +42,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Scrolling ground
         let groundTexture = SKTexture(imageNamed: "Ground.png");
-        let moveLeft = SKAction.moveByX(-groundTexture.size().width, y: 0, duration: 6)
-        let moveReset = SKAction.moveByX(groundTexture.size().width, y: 0, duration: 0)
+        let moveLeft = SKAction.moveByX(-groundTexture.size().width, y: 0, duration: 6);
+        let moveReset = SKAction.moveByX(groundTexture.size().width, y: 0, duration: 0);
         let moveGroundForever = SKAction.repeatActionForever(SKAction.sequence([moveLeft, moveReset]));
         
         for (var i: CGFloat = 0; i < 3; ++i) {
             ground = SKSpriteNode(texture: groundTexture);
-            ground.position = CGPoint(x: groundTexture.size().width/2 + groundTexture.size().width * i, y: 57);
+            ground.position = CGPoint(x: groundTexture.size().width / 2 + groundTexture.size().width * i, y: 57);
             ground.zPosition = 20;
             ground.runAction(moveGroundForever);
             movingObjects.addChild(ground);
@@ -70,11 +70,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createPipes() {
         
         // Gap between the two pipes
-        let gapHeight = doge.size.height * 4;
+        let gapHeight = doge.size.height * 3.6;
         
         // Random pipe gap locations
         let movementAmount = arc4random() % UInt32(self.frame.size.height / 2);
-        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 8;
+        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 8 - 38;
         
         // Making pipes appear and disappear
         let movePipes = SKAction.moveByX(-self.frame.size.width * 2, y: 0, duration: NSTimeInterval(self.frame.size.width / 50));
@@ -129,7 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontName = "Helvetica";
         scoreLabel.fontSize = 60;
         scoreLabel.text = "0";
-        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 143);
+        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 80);
         scoreLabel.zPosition = 100;
         self.addChild(scoreLabel);
     }
@@ -168,7 +168,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         doge.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
         doge.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
         
-        doge.physicsBody!.allowsRotation = false;
+        doge.physicsBody!.allowsRotation = true;
         
         self.addChild(doge);
         
@@ -177,19 +177,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
+        
         // Check for the category types of the objects that are colliding
         if contact.bodyA.categoryBitMask == ColliderType.Gap.rawValue || contact.bodyB.categoryBitMask == ColliderType.Gap.rawValue {
-            
             score++;
-            
             scoreLabel.text = String(score);
             
         } else {
             
             if gameOver == false {
-                
                 gameOver = true;
-                
                 self.speed = 0;
                 gameoverLabel.fontName = "Helvetica";
                 gameoverLabel.fontSize = 30;
@@ -204,7 +201,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (gameOver == false) {
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
-            doge.physicsBody!.applyImpulse(CGVectorMake(0, 45));
+            doge.physicsBody!.applyImpulse(CGVectorMake(0, 43));
         } else {
             score = 0;
             scoreLabel.text = "0";
