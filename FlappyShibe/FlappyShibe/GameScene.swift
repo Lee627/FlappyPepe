@@ -173,7 +173,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(doge);
         
         // Executed every 3 seconds
-        _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("createPipes"), userInfo: nil, repeats: true);
+        let delay = SKAction.waitForDuration(NSTimeInterval(3));
+        let spawn = SKAction.runBlock({()in self.createPipes()})
+        let spawnAndDelay = SKAction.repeatActionForever(SKAction.sequence([spawn, delay]));
+        runAction(spawnAndDelay);
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
