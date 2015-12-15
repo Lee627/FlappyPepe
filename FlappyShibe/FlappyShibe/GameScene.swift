@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    // MARK: Global variables
+    
     var score = 0;
     
     // Everything that appears on the screen is considered to be a node
@@ -32,6 +34,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     var gameOver = false;
+    
+    // MARK: Functions to create Sprites
     
     func createGround() {
         
@@ -190,6 +194,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let spawnAndDelay = SKAction.repeatActionForever(SKAction.sequence([spawn, delay]));
         runAction(spawnAndDelay);
     }
+    
+    // MARK: Gameplay
     
     func didBeginContact(contact: SKPhysicsContact) {
         
