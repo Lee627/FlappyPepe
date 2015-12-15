@@ -135,7 +135,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(scoreLabel);
     }
     
-    override func didMoveToView(view: SKView) {
+    func createButton() {
         
         pButton = SKSpriteNode(imageNamed: "Button.png");
         pButton.setScale(2.5);
@@ -143,6 +143,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pButton.zPosition = 100;
         pButton.name = "pauseButton";
         self.addChild(pButton);
+    }
+    
+    override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self;
         
@@ -151,6 +154,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         createGround();
         createScoreLabel();
+        createButton();
 
         let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
         let dogeTexture2 = SKTexture(imageNamed: "Doge2.png");
@@ -214,9 +218,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self);
             if (pButton.containsPoint(location)) {
                 if (self.view?.paused == true) {
+                    self.speed = 1;
                     self.view?.paused = false;
                 }
                 else if (self.view?.paused == false) {
+                    self.speed = 0;
                     self.view?.paused = true;
                 }
             }
