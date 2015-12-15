@@ -20,6 +20,7 @@
 		A2DDE2E71C1807620084957F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E51C1807620084957F /* Background.png */; };
 		A2DDE2EA1C180ECA0084957F /* PipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E81C180ECA0084957F /* PipeUp.png */; };
 		A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E91C180ECA0084957F /* PipeDown.png */; };
+		A2F00CF01C1FDD230094DA38 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F00CEF1C1FDD230094DA38 /* Button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A2DDE2E51C1807620084957F /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		A2DDE2E81C180ECA0084957F /* PipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeUp.png; sourceTree = "<group>"; };
 		A2DDE2E91C180ECA0084957F /* PipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeDown.png; sourceTree = "<group>"; };
+		A2F00CEF1C1FDD230094DA38 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		A2DDE2E31C17CABD0084957F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A2F00CEF1C1FDD230094DA38 /* Button.png */,
 				A2DDE2E41C1807620084957F /* Ground.png */,
 				A2DDE2E51C1807620084957F /* Background.png */,
 				A278CA831BE9EB7C00EF0587 /* Doge1.png */,
@@ -159,6 +162,7 @@
 				A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */,
 				A2DDE2EA1C180ECA0084957F /* PipeUp.png in Resources */,
 				A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */,
+				A2F00CF01C1FDD230094DA38 /* Button.png in Resources */,
 				A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */,
 				A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */,
 				A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */,
