@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0;
     
     // Everything that appears on the screen is considered to be a node
+    var instructionLabel = SKLabelNode();
     var pButton = SKSpriteNode();
     var scoreLabel = SKLabelNode();
     var gameoverLabel = SKLabelNode();
@@ -149,8 +150,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(pButton);
     }
     
+    func createInstLabel() {
+        
+        instructionLabel.fontName = "MrsKate";
+        instructionLabel.fontSize = 30;
+        instructionLabel.text = "Tap to fly!";
+        instructionLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        self.addChild(instructionLabel);
+    }
+    
     override func didMoveToView(view: SKView) {
         
+        self.view?.paused = true;
         self.physicsWorld.contactDelegate = self;
         
         self.addChild(movingObjects);
@@ -159,6 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createGround();
         createScoreLabel();
         createButton();
+        createInstLabel();
 
         let dogeTexture1 = SKTexture(imageNamed: "Doge1.png");
         let dogeTexture2 = SKTexture(imageNamed: "Doge2.png");
@@ -220,15 +232,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+        instructionLabel.hidden = true;
+        self.view?.paused = false;
+        
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self);
             if (pButton.containsPoint(location)) {
                 if (self.view?.paused == true) {
-                    self.speed = 1;
                     self.view?.paused = false;
                 }
                 else if (self.view?.paused == false) {
-                    self.speed = 0;
                     self.view?.paused = true;
                 }
             }
