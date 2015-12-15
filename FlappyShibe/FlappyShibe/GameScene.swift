@@ -168,7 +168,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         doge.physicsBody!.contactTestBitMask = ColliderType.Object.rawValue;
         doge.physicsBody!.collisionBitMask = ColliderType.Object.rawValue;
         
-        doge.physicsBody!.allowsRotation = true;
+        doge.physicsBody!.allowsRotation = false;
         
         self.addChild(doge);
         
