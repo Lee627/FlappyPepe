@@ -21,6 +21,7 @@
 		A2DDE2EA1C180ECA0084957F /* PipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E81C180ECA0084957F /* PipeUp.png */; };
 		A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E91C180ECA0084957F /* PipeDown.png */; };
 		A2F00CF01C1FDD230094DA38 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F00CEF1C1FDD230094DA38 /* Button.png */; };
+		A2F00CF41C1FF1D20094DA38 /* MrsKate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A2DDE2E81C180ECA0084957F /* PipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeUp.png; sourceTree = "<group>"; };
 		A2DDE2E91C180ECA0084957F /* PipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeDown.png; sourceTree = "<group>"; };
 		A2F00CEF1C1FDD230094DA38 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
+		A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MrsKate.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				A26ECD961BD6F791008A2639 /* GameScene.swift */,
 				A26ECD981BD6F791008A2639 /* GameViewController.swift */,
 				A26ECD9A1BD6F791008A2639 /* Main.storyboard */,
+				A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */,
 				A2DDE2E31C17CABD0084957F /* Images */,
 				A26ECD9D1BD6F791008A2639 /* Assets.xcassets */,
 				A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */,
@@ -166,6 +169,7 @@
 				A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */,
 				A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */,
 				A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */,
+				A2F00CF41C1FF1D20094DA38 /* MrsKate.ttf in Resources */,
 				A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

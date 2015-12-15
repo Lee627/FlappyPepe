@@ -127,7 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createScoreLabel() {
         
         // Display score
-        scoreLabel.fontName = "Helvetica";
+        scoreLabel.fontName = "MrsKate";
         scoreLabel.fontSize = 60;
         scoreLabel.text = "0";
         scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 80);
@@ -203,7 +203,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if gameOver == false {
                 gameOver = true;
                 self.speed = 0;
-                gameoverLabel.fontName = "Helvetica";
+                gameoverLabel.fontName = "MrsKate";
                 gameoverLabel.fontSize = 30;
                 gameoverLabel.text = "Game Over! Tap to play again";
                 gameoverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
