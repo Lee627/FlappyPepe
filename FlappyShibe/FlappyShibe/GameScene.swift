@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0;
     
     // Everything that appears on the screen is considered to be a node
+    var pButton = SKSpriteNode();
     var scoreLabel = SKLabelNode();
     var gameoverLabel = SKLabelNode();
     var doge = SKSpriteNode();
@@ -136,6 +137,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
+        pButton = SKSpriteNode(imageNamed: "Button.png");
+        pButton.setScale(2.5);
+        pButton.position = CGPointMake(CGRectGetMidX(self.frame) - 170, self.frame.size.height - 50);
+        pButton.zPosition = 100;
+        pButton.name = "pauseButton";
+        self.addChild(pButton);
+        
         self.physicsWorld.contactDelegate = self;
         
         self.addChild(movingObjects);
@@ -201,6 +209,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self);
+            if (pButton.containsPoint(location)) {
+                if (self.view?.paused == true) {
+                    self.view?.paused = false;
+                }
+                else if (self.view?.paused == false) {
+                    self.view?.paused = true;
+                }
+            }
+        }
         
         if (gameOver == false) {
             doge.physicsBody!.velocity = CGVectorMake(0, 0);
