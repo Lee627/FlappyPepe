@@ -54,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         for (var i: CGFloat = 0; i < 3; ++i) {
             ground = SKSpriteNode(texture: groundTexture);
-            ground.position = CGPoint(x: groundTexture.size().width / 2 + groundTexture.size().width * i, y: 57);
+            ground.position = CGPoint(x: groundTexture.size().width / 2 + groundTexture.size().width * i, y: 55);
             ground.zPosition = 20;
             ground.runAction(moveGroundForever);
             movingObjects.addChild(ground);
@@ -225,6 +225,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 gameoverLabel.fontSize = 30;
                 gameoverLabel.text = "Game Over! Tap to play again";
                 gameoverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+                gameoverLabel.zPosition = 100;
                 labelContainer.addChild(gameoverLabel);
             }
         }
