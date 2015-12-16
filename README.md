@@ -50,9 +50,9 @@ Check out [Gitter](https://gitter.im/ChapmanCPSC370/FlappyShibe) to communicate 
 
 Development Status
 ------------------
-* Last achieved goal: cleaning up code/improving gameplay
-* In progress: pause button
-* Next goal: start option
+* Last achieved goal: scoring issue
+* In progress: start menu
+* Next goal: end screen
 
 License
 -------
