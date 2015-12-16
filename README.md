@@ -8,10 +8,10 @@ This project is an iOS version of Flappy Bird built using Swift 2.0 and SpriteKi
 
 You tap on the screen to make Doge fly. Your goal is to help Doge fly as far as he can without hitting a pipe.
 
-Screenshot
+Demo
 ----------
 
-![ScreenShot](https://github.com/ChapmanCPSC370/FlappyShibe/blob/master/images/SS2.png)
+![FlappyShibe](http://i.imgur.com/NgtSUs3.gif)
 
 How to Install
 --------------
