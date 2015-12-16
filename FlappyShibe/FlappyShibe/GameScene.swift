@@ -117,7 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // PhysicsBody for the gap between the two pipes -- used for scoring
         let gap = SKNode()
-        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width/2, y: CGRectGetMidY(self.frame) + pipeOffset);
+        gap.position = CGPoint(x: CGRectGetMidX(self.frame) + self.frame.size.width/2 + pipe1Texture.size().width / 2, y: CGRectGetMidY(self.frame) + pipeOffset);
         gap.runAction(moveAndRemovePipes);
         gap.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(pipe1.size.width, gapHeight));
         gap.physicsBody!.dynamic = false;
