@@ -14,6 +14,14 @@
 		A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9A1BD6F791008A2639 /* Main.storyboard */; };
 		A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9D1BD6F791008A2639 /* Assets.xcassets */; };
 		A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */; };
+		A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA831BE9EB7C00EF0587 /* Doge1.png */; };
+		A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */ = {isa = PBXBuildFile; fileRef = A278CA841BE9EB7C00EF0587 /* Doge2.png */; };
+		A2DDE2E61C1807620084957F /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E41C1807620084957F /* Ground.png */; };
+		A2DDE2E71C1807620084957F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E51C1807620084957F /* Background.png */; };
+		A2DDE2EA1C180ECA0084957F /* PipeUp.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E81C180ECA0084957F /* PipeUp.png */; };
+		A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */ = {isa = PBXBuildFile; fileRef = A2DDE2E91C180ECA0084957F /* PipeDown.png */; };
+		A2F00CF01C1FDD230094DA38 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F00CEF1C1FDD230094DA38 /* Button.png */; };
+		A2F00CF41C1FF1D20094DA38 /* MrsKate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		A26ECD9D1BD6F791008A2639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A26ECDA01BD6F791008A2639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26ECDA21BD6F791008A2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A278CA831BE9EB7C00EF0587 /* Doge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge1.png; sourceTree = "<group>"; };
+		A278CA841BE9EB7C00EF0587 /* Doge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doge2.png; sourceTree = "<group>"; };
+		A2DDE2E41C1807620084957F /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		A2DDE2E51C1807620084957F /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		A2DDE2E81C180ECA0084957F /* PipeUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeUp.png; sourceTree = "<group>"; };
+		A2DDE2E91C180ECA0084957F /* PipeDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PipeDown.png; sourceTree = "<group>"; };
+		A2F00CEF1C1FDD230094DA38 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
+		A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MrsKate.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +79,27 @@
 				A26ECD961BD6F791008A2639 /* GameScene.swift */,
 				A26ECD981BD6F791008A2639 /* GameViewController.swift */,
 				A26ECD9A1BD6F791008A2639 /* Main.storyboard */,
+				A2F00CF31C1FF1D20094DA38 /* MrsKate.ttf */,
+				A2DDE2E31C17CABD0084957F /* Images */,
 				A26ECD9D1BD6F791008A2639 /* Assets.xcassets */,
 				A26ECD9F1BD6F791008A2639 /* LaunchScreen.storyboard */,
 				A26ECDA21BD6F791008A2639 /* Info.plist */,
 			);
 			path = FlappyShibe;
+			sourceTree = "<group>";
+		};
+		A2DDE2E31C17CABD0084957F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A2F00CEF1C1FDD230094DA38 /* Button.png */,
+				A2DDE2E41C1807620084957F /* Ground.png */,
+				A2DDE2E51C1807620084957F /* Background.png */,
+				A278CA831BE9EB7C00EF0587 /* Doge1.png */,
+				A278CA841BE9EB7C00EF0587 /* Doge2.png */,
+				A2DDE2E81C180ECA0084957F /* PipeUp.png */,
+				A2DDE2E91C180ECA0084957F /* PipeDown.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +160,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26ECD951BD6F791008A2639 /* GameScene.sks in Resources */,
+				A2DDE2E71C1807620084957F /* Background.png in Resources */,
+				A2DDE2E61C1807620084957F /* Ground.png in Resources */,
 				A26ECDA11BD6F791008A2639 /* LaunchScreen.storyboard in Resources */,
+				A2DDE2EA1C180ECA0084957F /* PipeUp.png in Resources */,
+				A278CA851BE9EB7C00EF0587 /* Doge1.png in Resources */,
+				A2F00CF01C1FDD230094DA38 /* Button.png in Resources */,
 				A26ECD9E1BD6F791008A2639 /* Assets.xcassets in Resources */,
+				A2DDE2EB1C180ECA0084957F /* PipeDown.png in Resources */,
 				A26ECD9C1BD6F791008A2639 /* Main.storyboard in Resources */,
+				A2F00CF41C1FF1D20094DA38 /* MrsKate.ttf in Resources */,
+				A278CA861BE9EB7C00EF0587 /* Doge2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				INFOPLIST_FILE = FlappyShibe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyShibe;
@@ -265,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				INFOPLIST_FILE = FlappyShibe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CPSC370.FlappyShibe;
@@ -291,6 +333,7 @@
 				A26ECDA71BD6F791008A2639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
